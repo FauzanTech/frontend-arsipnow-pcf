@@ -1,0 +1,250 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #3f78d6;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .app-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Layout utama */
+  .container {
+    display: flex;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: #f1f1f1;
+    width: 220px;
+    min-height: 100vh;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Sidebar hide */
+  .sidebar.hide {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* Profile */
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .profile-photo {
+    background-color: #ccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+  
+  .profile-info p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Menu */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px; /* jarak ekstra ke user-section */
+  }
+  
+  .menu-item {
+    background-color: #d9d9d9;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item.active {
+    background-color: #3f78d6;
+    color: white;
+  }
+  
+  .menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 8px;
+  }
+  
+  .submenu-item {
+    background: #e4e4e4;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .submenu.show {
+    display: flex;
+  }
+  
+  /* User Section */
+  .user-section {
+    background-color: #d9d9d9;
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .user-section p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .logout-button {
+    margin-top: 5px;
+    padding: 10px;
+    background: none;
+    color: black;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .logout-button span {
+    color: red;
+    font-size: 18px;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Cards */
+  .cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: #f8f5f5;
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 250px;
+  }
+  
+  .card img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Card warna */
+  .blue img {
+    filter: invert(24%) sepia(85%) saturate(748%) hue-rotate(195deg) brightness(92%) contrast(92%);
+  }
+  
+  .green img {
+    filter: invert(66%) sepia(59%) saturate(550%) hue-rotate(84deg) brightness(98%) contrast(86%);
+  }
+  
+  .orange img {
+    filter: invert(55%) sepia(88%) saturate(669%) hue-rotate(2deg) brightness(102%) contrast(97%);
+  }
+  
+  /* Welcome Box */
+  .welcome-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .welcome-box h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .welcome-box p {
+    font-size: 14px;
+  }
+  
+  /* Responsive untuk mobile */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      height: calc(100% - 60px);
+      z-index: 1000;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  

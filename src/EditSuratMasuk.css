@@ -1,0 +1,73 @@
+/* EditSuratMasuk.css */
+
+.edit-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+.edit-form .form-group {
+  margin-bottom: 20px;
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="date"],
+.edit-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.edit-form p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button[type="submit"] {
+  background-color: #2e8b57;
+  color: #fff;
+}
+
+.button-group .cancel-button {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.button-group button:hover {
+  opacity: 0.9;
+}

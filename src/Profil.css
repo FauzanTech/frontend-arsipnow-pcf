@@ -1,0 +1,201 @@
+/* Reset hanya dalam profil */
+.profil-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.profil-header {
+  background-color: #3f78d6;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.profil-menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.profil-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Layout utama */
+.profil-container {
+  display: flex;
+}
+
+/* Sidebar */
+.profil-sidebar {
+  background-color: #f1f1f1;
+  width: 220px;
+  min-height: 100vh;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.profil-sidebar.hide {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Menu */
+.profil-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.profil-menu-item {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profil-menu-item:hover {
+  background-color: #b0bec5;
+}
+
+.profil-menu-item.active {
+  background-color: #3f78d6;
+  color: white;
+}
+
+/* Group Menu */
+.profil-menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Submenu */
+.profil-submenu {
+  display: none;
+  flex-direction: column;
+  margin-left: 20px;
+  gap: 8px;
+}
+
+.profil-submenu.show {
+  display: flex;
+}
+
+/* Submenu Item */
+.profil-submenu-item {
+  background: #e4e4e4;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* User Section */
+.profil-user-section {
+  background-color: #d9d9d9;
+  padding: 15px 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.profil-user-section p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Logout Button */
+.profil-logout-button {
+  margin-top: 5px;
+  padding: 10px;
+  background: none;
+  color: black;
+  border: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profil-logout-button span {
+  color: red;
+  font-size: 18px;
+}
+
+/* Main Content */
+.profil-main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profil-profile-content {
+  text-align: center;
+}
+
+.profil-profile-icon {
+  font-size: 50px;
+}
+
+.profil-profile-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Detail Profil */
+.profil-profile-details {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.profil-profile-details p {
+  margin-bottom: 10px;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .profil-container {
+    flex-direction: column;
+  }
+
+  .profil-sidebar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: calc(100% - 60px);
+    z-index: 1000;
+  }
+
+  .profil-main-content {
+    margin-left: 0;
+  }
+}
