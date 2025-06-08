@@ -338,9 +338,10 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    // console.log('Base URL:', process.env.REACT_APP_URL_BASE);
 
     // Ambil jumlah surat masuk
-    fetch('${process.env.REACT_APP_URL_BASE}/api/masuk/jumlah/surat', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/jumlah/surat`, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
