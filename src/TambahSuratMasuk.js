@@ -45,7 +45,7 @@ function TambahSuratMasuk() {
 
     const token = localStorage.getItem('token');
 
-    fetch('http://localhost:5000/api/masuk/', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/`, {
       method: 'POST',
       headers: {
         Authorization: 'Bearer ' + token
