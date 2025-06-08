@@ -20,7 +20,7 @@ const EditSuratMasuk = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/masuk/${id}`, {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -69,7 +69,7 @@ const EditSuratMasuk = () => {
     }
 
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/masuk/${id}`, {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/${id}`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -160,7 +160,7 @@ const EditSuratMasuk = () => {
           {existingFile && (
             <p>
               File saat ini:{' '}
-              <a href={`http://localhost:5000/uploads/${existingFile}`} target="_blank" rel="noreferrer">
+              <a href={`${process.env.REACT_APP_URL_BASE}/uploads/${existingFile}`} target="_blank" rel="noreferrer">
                 {existingFile}
               </a>
             </p>
