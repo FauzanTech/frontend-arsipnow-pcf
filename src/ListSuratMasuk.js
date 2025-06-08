@@ -11,7 +11,7 @@ const ListSuratMasuk = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:5000/api/masuk/', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/`, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
@@ -31,7 +31,7 @@ const ListSuratMasuk = () => {
     if (!window.confirm('Yakin ingin menghapus surat ini?')) return;
 
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/masuk/${id}`, {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/masuk/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + token
@@ -124,7 +124,7 @@ const ListSuratMasuk = () => {
                     <td>{surat.perihal}</td>
                     <td>
                       <a
-                        href={`http://localhost:5000/uploads/${surat.file_surat}`}
+                        href={`${process.env.REACT_APP_URL_BASE}/uploads/${surat.file_surat}`}
                         target="_blank"
                         rel="noreferrer"
                       >
