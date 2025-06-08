@@ -354,7 +354,7 @@ const Dashboard = () => {
       .catch(err => console.error(err));
 
     // Ambil jumlah surat keluar
-    fetch('http://localhost:5000/api/keluar/jumlah/surat', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/keluar/jumlah/surat`, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
