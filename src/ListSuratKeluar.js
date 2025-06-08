@@ -11,7 +11,7 @@ const ListSuratKeluar = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:5000/api/keluar/', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/keluar/`, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
@@ -31,7 +31,7 @@ const ListSuratKeluar = () => {
     if (!window.confirm('Yakin ingin menghapus surat ini?')) return;
 
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/keluar/${id}`, {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/keluar/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + token
@@ -125,7 +125,7 @@ const ListSuratKeluar = () => {
                       <td>{surat.penandatangan}</td>
                       <td>
                         <a
-                          href={`http://localhost:5000/uploads/${surat.file_surat}`}
+                          href={`${process.env.REACT_APP_URL_BASE}/uploads/${surat.file_surat}`}
                           target="_blank"
                           rel="noreferrer"
                         >

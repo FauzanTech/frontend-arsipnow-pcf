@@ -50,7 +50,7 @@ const TambahSuratKeluar = () => {
 
     const token = localStorage.getItem('token');
 
-    fetch('http://localhost:5000/api/keluar/', {
+    fetch(`${process.env.REACT_APP_URL_BASE}/api/keluar/`, {
       method: 'POST',
       headers: {
         Authorization: 'Bearer ' + token

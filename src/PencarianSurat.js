@@ -27,8 +27,8 @@ const PencarianSurat = () => {
   const fetchSurat = (jenis, keyword) => {
     const token = localStorage.getItem('token');
     const url = jenis === 'masuk'
-      ? `http://localhost:5000/api/masuk/search/surat?cari=${encodeURIComponent(keyword)}`
-      : `http://localhost:5000/api/keluar/search/surat?cari=${encodeURIComponent(keyword)}`;
+      ? `${process.env.REACT_APP_URL_BASE}/api/masuk/search/surat?cari=${encodeURIComponent(keyword)}`
+      : `${process.env.REACT_APP_URL_BASE}/api/keluar/search/surat?cari=${encodeURIComponent(keyword)}`;
 
     if (jenis === 'masuk') {
       setLoadingMasuk(true);
@@ -199,7 +199,7 @@ const PencarianSurat = () => {
                       <td>{surat.perihal}</td>
                       <td>
                         <a
-                          href={`http://localhost:5000/uploads/${getFileNameFromPath(surat.file)}`}
+                          href={`${process.env.REACT_APP_URL_BASE}/uploads/${getFileNameFromPath(surat.file)}`}
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -241,7 +241,7 @@ const PencarianSurat = () => {
                       <td>{surat.penandatangan}</td>
                       <td>
                         <a
-                          href={`http://localhost:5000/uploads/${getFileNameFromPath(surat.file)}`}
+                          href={`${process.env.REACT_APP_URL_BASE}/uploads/${getFileNameFromPath(surat.file)}`}
                           target="_blank"
                           rel="noreferrer"
                         >
