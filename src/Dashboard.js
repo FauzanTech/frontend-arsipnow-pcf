@@ -340,7 +340,7 @@ const Dashboard = () => {
     const token = localStorage.getItem('token');
 
     // Ambil jumlah surat masuk
-    fetch('http://localhost:5000/api/masuk/jumlah/surat', {
+    fetch('${process.env.URL_BASE}/api/masuk/jumlah/surat', {
       headers: {
         'Authorization': 'Bearer ' + token
       }
