@@ -86,15 +86,20 @@ const ListSuratMasuk = () => {
             </nav>
 
             <div className="user-section">
-            <p>User</p>
-            <button className="logout-button" onClick={() => {
-              localStorage.removeItem('user');
-              localStorage.removeItem('token');
-              window.location.href = '/';
-            }}>
-              <span>⏻</span> Keluar
-            </button>
-          </div>
+              <p>User</p>
+              <button className="logout-button" onClick={() => {
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                window.location.href = '/';
+              }}>
+                <img
+                  src="/logout.png"
+                  alt="Logout Icon"
+                  style={{ width: '20px', height: '20px', marginRight: '8px', verticalAlign: 'middle' }}
+                />
+                Keluar
+              </button>
+            </div>
           </aside>
         )}
 
@@ -114,29 +119,49 @@ const ListSuratMasuk = () => {
                 </tr>
               </thead>
               <tbody>
-                {dataSurat.map(surat => (
-                  <tr key={surat.id}>
-                    <td>{surat.id}</td>
-                    <td>{surat.no_surat}</td>
-                    <td>{surat.tgl_surat}</td>
-                    <td>{surat.tgl_diterima}</td>
-                    <td>{surat.pengirim}</td>
-                    <td>{surat.perihal}</td>
-                    <td>
-                      <a
-                        href={`${process.env.REACT_APP_URL_BASE}/uploads/${surat.file_surat}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {surat.file_surat}
-                      </a>
-                    </td>
-                    <td>
-                      <button onClick={() => handleEdit(surat.id)}>✏️</button>
-                      <button onClick={() => handleDelete(surat.id)}>🗑️</button>
+                {dataSurat.length > 0 ? (
+                  dataSurat.map(surat => (
+                    <tr key={surat.id}>
+                      <td>{surat.id}</td>
+                      <td>{surat.no_surat}</td>
+                      <td>{surat.tgl_surat}</td>
+                      <td>{surat.tgl_diterima}</td>
+                      <td>{surat.pengirim}</td>
+                      <td>{surat.perihal}</td>
+                      <td>
+                        <a
+                          href={`${process.env.REACT_APP_URL_BASE}/uploads/${surat.file_surat}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {surat.file_surat}
+                        </a>
+                      </td>
+                      <td style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                        <button onClick={() => handleEdit(surat.id)} style={{ background: 'none', border: 'none', padding: 0, margin: 0 }}>
+                          <img
+                            src="/edit.png"
+                            alt="Edit"
+                            style={{ width: '20px', height: '20px', cursor: 'pointer', display: 'block' }}
+                          />
+                        </button>
+                        <button onClick={() => handleDelete(surat.id)} style={{ background: 'none', border: 'none', padding: 0, margin: 0 }}>
+                          <img
+                            src="/delete.png"
+                            alt="Hapus"
+                            style={{ width: '20px', height: '20px', cursor: 'pointer', display: 'block' }}
+                          />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="8" style={{ textAlign: 'center' }}>
+                      Tidak ada data.
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>

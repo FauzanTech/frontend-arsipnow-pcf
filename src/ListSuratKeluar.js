@@ -86,15 +86,20 @@ const ListSuratKeluar = () => {
             </nav>
 
             <div className="user-section">
-            <p>User</p>
-            <button className="logout-button" onClick={() => {
-              localStorage.removeItem('user');
-              localStorage.removeItem('token');
-              window.location.href = '/';
-            }}>
-              <span>⏻</span> Keluar
-            </button>
-          </div>
+              <p>User</p>
+              <button className="logout-button" onClick={() => {
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                window.location.href = '/';
+              }}>
+                <img
+                  src="/logout.png"
+                  alt="Logout Icon"
+                  style={{ width: '20px', height: '20px', marginRight: '8px', verticalAlign: 'middle' }}
+                />
+                Keluar
+              </button>
+            </div>
           </aside>
         )}
 
@@ -132,9 +137,21 @@ const ListSuratKeluar = () => {
                           {surat.file_surat}
                         </a>
                       </td>
-                      <td>
-                        <button onClick={() => handleEdit(surat.id)}>✏️</button>
-                        <button onClick={() => handleDelete(surat.id)}>🗑️</button>
+                      <td style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                        <button onClick={() => handleEdit(surat.id)} style={{ background: 'none', border: 'none', padding: 0, margin: 0 }}>
+                          <img
+                            src="/edit.png"
+                            alt="Edit"
+                            style={{ width: '20px', height: '20px', cursor: 'pointer', display: 'block' }}
+                          />
+                        </button>
+                        <button onClick={() => handleDelete(surat.id)} style={{ background: 'none', border: 'none', padding: 0, margin: 0 }}>
+                          <img
+                            src="/delete.png"
+                            alt="Hapus"
+                            style={{ width: '20px', height: '20px', cursor: 'pointer', display: 'block' }}
+                          />
+                        </button>
                       </td>
                     </tr>
                   ))

@@ -111,7 +111,12 @@ const TambahSuratKeluar = () => {
           <div className="user-section">
             <p>User</p>
             <button className="logout-button" onClick={() => window.location.href = 'Login'}>
-              <span>⏻</span> Keluar
+               <img
+                src="/logout.png"
+                alt="Logout Icon"
+                style={{ width: '20px', height: '20px', marginRight: '8px', verticalAlign: 'middle' }}
+              />
+              Keluar
             </button>
           </div>
         </aside>

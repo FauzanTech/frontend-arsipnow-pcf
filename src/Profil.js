@@ -215,7 +215,12 @@ const Profil = () => {
           <div className="profil-user-section">
             <p>User</p>
             <button className="profil-logout-button" onClick={() => (window.location.href = '/')}>
-              <span>⏻</span> Keluar
+               <img
+                src="/logout.png"
+                alt="Logout Icon"
+                style={{ width: '20px', height: '20px', marginRight: '8px', verticalAlign: 'middle' }}
+              />
+              Keluar
             </button>
           </div>
         </aside>
