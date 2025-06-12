@@ -303,7 +303,7 @@
 //             <div className="card orange">
 //               <img src="https://img.icons8.com/ios-filled/50/000000/outbox.png" alt="Surat keluar" />
 //               <h3>Surat keluar</h3>
-//               <p className="count">{jumlahKeluar}</p>
+//               <p className="count">{jumlahKeluar}</p> testes
 //             </div>
 //           </div>
 
